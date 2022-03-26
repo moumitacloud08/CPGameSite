@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gamepanel import views
+from gamepanel import views as gpanelview
+from home import views as homeviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('game/', views.game , name='panel'),
+    path('', homeviews.home, name='home'),
+    path('game/', gpanelview.game , name='panel'),
 ]
