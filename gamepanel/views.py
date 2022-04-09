@@ -7,3 +7,4 @@ from django.http import HttpResponse
 
 def game(request):
     return render(request, 'gpanel/panel.html')
+
