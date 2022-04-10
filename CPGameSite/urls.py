@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from gamepanel import views as gpanelview
 from home import views as homeviews
+from login import views as loginviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homeviews.home, name='home'),
+    path('', loginviews.login , name='login'),
+    path('home/', homeviews.home, name='home'),
     path('game/', gpanelview.game , name='panel'),
 ]
