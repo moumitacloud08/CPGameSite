@@ -13,3 +13,8 @@ class Panel(models.Model):
 class NumberMaster(models.Model):
     numberId = models.CharField(default='', max_length=10)
     numberDesc = models.CharField(default='',max_length=10)
+
+class ColorMaster(models.Model):
+    colorId = models.CharField(default='', max_length=10)
+    colorCode = models.CharField(default='', max_length=10)
+    colorDesc = models.CharField(default='',max_length=10)
