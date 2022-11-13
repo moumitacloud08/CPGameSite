@@ -19,9 +19,12 @@ from gamepanel import views as gpanelview
 from home import views as homeviews
 from login import views as loginviews
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', loginviews.login , name='login'),
+    path('', loginviews.loginuser , name='loginuser'),
     path('home/', homeviews.home, name='home'),
     path('game/', gpanelview.game , name='panel'),
+    path('logout/', gpanelview.logoutuser, name='logoutuser'),
+     path('', gpanelview.loginpage, name='loginpage'),
 ]
