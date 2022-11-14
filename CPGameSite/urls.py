@@ -26,5 +26,5 @@ urlpatterns = [
     path('home/', homeviews.home, name='home'),
     path('game/', gpanelview.game , name='panel'),
     path('logout/', gpanelview.logoutuser, name='logoutuser'),
-     path('', gpanelview.loginpage, name='loginpage'),
+    path('', gpanelview.loginpage, name='loginpage'),
 ]
