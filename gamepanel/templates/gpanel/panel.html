@@ -24,6 +24,20 @@
             top: 58px;
             left: 20px;
         }
+        
+        .tab-box {
+            position: relative;
+            top: 77px;
+        }
+        
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+            /* border-bottom-right-radius: initial; */
+            /* border-block-width: 5px; */
+            /* padding: 5px 354px 4px 9px; */
+            margin-left: 5px;
+            margin-right: 100px;
+        }
     </style>
 </head>
 
@@ -51,40 +65,48 @@
         </div>
     </nav>
     {% endif %}
+    <div class="row">
+        <div class="col-sm-2"><span>Period</span>
+            <p>123456</p>
+        </div>
+        <div class="col-sm-2"><span>Countdown</span>
+            <p>123456</p>
+        </div>
+    </div>
     <div class="row box">
         {% for color in colorList %} {% if color.colorCode == 'GR' %}
-        <div class="col-md-2">
-            <div class="card" style="width: 8rem;background-color: green">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
-                    </h5>
-                    <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
-                </div>
+
+        <div class="card" style="width: 8rem;background-color: green">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
+                </h5>
+                <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
             </div>
         </div>
+
         {% endif %} {% if color.colorCode == 'VL' %}
-        <div class="col-md-2">
-            <div class="card" style="width: 8rem;background-color: violet">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
-                    </h5>
-                    <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
-                </div>
+
+        <div class="card" style="width: 8rem;background-color: violet">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
+                </h5>
+                <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
             </div>
         </div>
+
         {% endif %} {% if color.colorCode == 'RD' %}
-        <div class="col-md-2">
-            <div class="card" style="width: 8rem;background-color: red">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
-                    </h5>
-                    <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
-                </div>
+
+        <div class="card" style="width: 8rem;background-color: red">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <img src="{% static 'gpanel/rocketlogo.png' %}" alt="My image" width="30" height="30">
+                </h5>
+                <p class="card-text" style="color: white;">Join {{color.colorDesc}}</p>
             </div>
         </div>
+
         {% endif %} {% endfor %}
     </div>
     <div class="card num-box" style="width: 18rem;">
@@ -93,6 +115,20 @@
                 <button type="button" class="btn btn-outline-primary btn-lg">{{ num.numberDesc}}</button> {% endfor %}</p>
         </div>
     </div>
+    <div class="tab-box">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link " href="#">Continuous</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Record</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Probability</a>
+            </li>
+        </ul>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
