@@ -43,6 +43,18 @@
             margin-left: 5px;
             margin-right: 100px;
         }
+        
+        .record-img-box {
+            margin-right: -248px;
+        }
+        
+        .img-box {
+            margin-left: 15px;
+        }
+        
+        body {
+            overflow-y: auto;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -145,8 +157,26 @@
 
     <div class="tab-content" id="tabs">
         <div class="tab-pane" id="aaa">...Content1...</div>
-        <div class="tab-pane" id="bbb">
-            <img src="{% static 'gpanel/cg1.png' %}" alt="My image" width="700" height="700">
+        <div class="tab-pane active" id="bbb">
+            <div class="row">
+
+                <div class="col-sm-2 record-img-box">
+                    <img class="img-box" src="{% static 'gpanel/cg1v1.png' %}" alt="My image" width="70" height="70">
+                </div>
+                <div class="col-sm-2 record-img-box">
+                    <img class="img-box" src="{% static 'gpanel/cg1v1.png' %}" alt="My image" width="70" height="70">
+                </div>
+                <div class="col-sm-2 record-img-box">
+                    <img class="img-box" src="{% static 'gpanel/cg1v1.png' %}" alt="My image" width="70" height="70">
+                </div>
+                <div class="col-sm-2 record-img-box">
+                    <img class="img-box" src="{% static 'gpanel/cg2v1.png' %}" alt="My image" width="70" height="70">
+                </div>
+                <div class="col-sm-2 record-img-box">
+                    <img class="img-box" src="{% static 'gpanel/cr1.png' %}" alt="My image" width="70" height="70">
+                </div>
+            </div>
+
         </div>
         <div class="tab-pane" id="ccc">...Content3...</div>
     </div>

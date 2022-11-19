@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gamepanel',
     'home',
-    'login'
+    'login',
+    'django_cleanup.apps.CleanupConfig', # should be placed after your apps
 ]
 
 MIDDLEWARE = [
