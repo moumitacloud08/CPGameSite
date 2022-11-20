@@ -9,3 +9,4 @@ class PanelAdmin(admin.ModelAdmin):
 admin.site.register(models.Panel, PanelAdmin)
 admin.site.register(models.NumberMaster, PanelAdmin)
 admin.site.register(models.ColorMaster, PanelAdmin)
+admin.site.register(models.RecordDetail, PanelAdmin)

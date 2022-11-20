@@ -18,3 +18,12 @@ class ColorMaster(models.Model):
     colorId = models.CharField(default='', max_length=10)
     colorCode = models.CharField(default='', max_length=10)
     colorDesc = models.CharField(default='',max_length=10)
+
+class RecordDetail(models.Model):
+    recordId = models.CharField(default='', max_length=10)
+    recordNumber = models.CharField(default='', max_length=10)
+    openTime = models.CharField(default='',max_length=10)
+    periodNumber = models.CharField(default='',max_length=100)
+    price = models.CharField(default='',max_length=100)
+    colorId = models.CharField(default='', max_length=10)
+    numberId = models.CharField(default='', max_length=10)
