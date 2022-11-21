@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPsite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+
+    <style>
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+            /* border-bottom-right-radius: initial; */
+            /* border-block-width: 5px; */
+            /* padding: 5px 354px 4px 9px; */
+            margin-left: 5px;
+            margin-right: 100px;
+        }
+        
+        body {
+            overflow-y: auto;
+        }
+        
+        .content {
+            max-width: 592px;
+            position: relative;
+            left: 524px;
+            border: 1px solid #ddd;
+            height: 657px;
+        }
+        
+        .list-group-item {
+            border: 0px solid rgba(0, 0, 0, .125);
+        }
+        
+        .list-box {
+            border: 1px solid rgba(0, 0, 0, .125);
+            position: relative;
+            top: 50px;
+            left: 50px;
+            width: 500px;
+        }
+        
+        .radio-check {
+            margin-top: -1.7rem;
+            margin-left: 8.75rem;
+        }
+        
+        .paypop {
+            position: relative;
+            top: 71px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            activaTab('aaa');
+        });
+
+        function activaTab(tab) {
+            $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+        };
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'panel' %}">Game</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'myaccount' %}">My Account <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'logoutuser' %}">
+                            {% csrf_token %}
+                            <button id="signOutBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+
+                        </form>
+                    </li>
+                </ul>
+
+
+            </div>
+        </nav>
+        {% endif %}
+        <div class="row">
+            <span>Recharge Amount</span><br>50
+        </div>
+        <div class="row">
+            <span>Select Payment Method</span>
+            <ul class="list-group list-box">
+                <li class="list-group-item"><img src="{% static 'myaccount/paytm-icon.png' %}" alt="My image" width="150" height="60">
+                    <div class="form-check">
+                        <input id="paytmId" class="form-check-input radio-check" type="radio" name="exampleRadios" value="option2">
+                    </div>
+                </li>
+
+                <li class="list-group-item"><img src="{% static 'myaccount/phonepe-logo-icon.png' %}" alt="My image" width="150" height="60">
+                    <div class="form-check">
+                        <input id="phonepeId" class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    </div>
+                </li>
+                <li class="list-group-item"><img src="{% static 'myaccount/google-pay-icon.png' %}" alt="My image" width="150" height="60">
+                    <div class="form-check">
+                        <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    </div>
+                </li>
+                <li class="list-group-item"><img src="{% static 'myaccount/amazon-pay-icon.png' %}" alt="My image" width="150" height="60">
+                    <div class="form-check">
+                        <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row paypop" id="paytmpop" style="display:none;">
+            <p>Pay to: SAMPLE.90060636964@fbpe</p>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Open <img src="{% static 'myaccount/paytm-icon.png' %}" alt="My image" width="50" height="50"> app to pay 50</button>
+        </div>
+        <div class="row paypop" id="phonepepop" style="display:none;">
+            <p>Pay to: SAMPLE.90060636964@fbpe</p>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Open <img src="{% static 'myaccount/phonepe-logo-icon.png' %}" alt="My image" width="50" height="50"> app to pay 50</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#paytmId").click(function() {
+                document.getElementById('phonepepop').style.display = "none";
+                document.getElementById('paytmpop').style.display = "block";
+            });
+            $("#phonepeId").click(function() {
+                document.getElementById('paytmpop').style.display = "none";
+                document.getElementById('phonepepop').style.display = "block";
+            });
+        })
+    </script>
+</body>
+
+</html>

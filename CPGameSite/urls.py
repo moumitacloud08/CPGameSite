@@ -28,5 +28,6 @@ urlpatterns = [
     path('game/', gpanelview.game , name='panel'),
     path('logout/', gpanelview.logoutuser, name='logoutuser'),
     path('', gpanelview.loginpage, name='loginpage'),
+    path('myaccount/', accountviews.myaccount, name='myaccount'),
     path('recharge/', accountviews.recharge, name='recharge'),
 ]
