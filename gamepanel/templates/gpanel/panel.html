@@ -61,11 +61,35 @@
         }
         
         .content {
-            max-width: 424px;
-            position: absolute;
+            max-width: 592px;
+            position: relative;
             left: 524px;
-            /* right: 94px; */
+            border: 1px solid #ddd;
+            height: 657px;
         }
+        
+        .progress-bar-cl {
+            margin-top: 10px;
+            margin-left: -32px;
+        }
+        
+        .bg-vl {
+            background-color: rgb(119, 31, 119)
+        }
+        
+        .progress {
+            width: 84px;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 1px;
+        }
+        /* table {
+            overflow: scroll;
+            overflow: auto;
+        } */
     </style>
     <script>
         $(document).ready(function() {
@@ -257,9 +281,74 @@
 
 
             </div>
-            <div class="tab-pane" id="ccc">...Content3...</div>
-        </div>
+            <div class="tab-pane" id="ccc">
+                <div class="row">
+                    <span>2376</span> times today
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="img-box" src="{% static 'gpanel/cgr.png' %}" alt="My image" width="40" height="40">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="progress progress-bar-cl">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-box" src="{% static 'gpanel/cre.png' %}" alt="My image" width="40" height="40">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="progress progress-bar-cl">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4567
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-box" src="{% static 'gpanel/cvi.png' %}" alt="My image" width="40" height="40">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="progress progress-bar-cl">
+                            <div class="progress-bar bg-vl" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1179
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table-bordered" style=" position: absolute;
+                    left: 4px;">
+                        <thead>
+                            <tr>
 
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                                <th><img class="img-box" src="{% static 'gpanel/ca1.png' %}" alt="My image" width="40" height="40"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
