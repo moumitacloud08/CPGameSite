@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'gamepanel',
     'home',
     'login',
+    'myaccount',
     'django_cleanup.apps.CleanupConfig', # should be placed after your apps
 ]
 

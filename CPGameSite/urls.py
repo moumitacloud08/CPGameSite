@@ -18,6 +18,7 @@ from django.urls import path
 from gamepanel import views as gpanelview
 from home import views as homeviews
 from login import views as loginviews
+from myaccount import views as accountviews
 
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path('game/', gpanelview.game , name='panel'),
     path('logout/', gpanelview.logoutuser, name='logoutuser'),
     path('', gpanelview.loginpage, name='loginpage'),
+    path('recharge/', accountviews.recharge, name='recharge'),
 ]
