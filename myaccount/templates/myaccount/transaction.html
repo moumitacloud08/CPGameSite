@@ -55,6 +55,54 @@
             position: relative;
             top: 71px;
         }
+        
+        .upload-box {
+            border: 2px solid gray;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            top: 50px;
+            right: 284px;
+        }
+        
+        .agent-box {
+            margin-top: 66px;
+            margin-left: 33px;
+        }
+        
+        .step1-box {
+            margin-top: 22px;
+            margin-left: 33px;
+        }
+        
+        .complete-box {
+            margin-top: 80px;
+            margin-left: 33px;
+        }
+        
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .btn {
+            /* border: 2px solid gray; */
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            /* font-size: 20px; */
+            /* font-weight: bold; */
+        }
+        
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -97,66 +145,33 @@
         </nav>
         {% endif %}
         <div class="row">
-            <span>Recharge Amount</span><br>50
+            <span>Recharge</span><br>
         </div>
         <div class="row">
-            <span>Select Payment Method</span>
-            <ul class="list-group list-box">
-                <li class="list-group-item"><img src="{% static 'myaccount/paytm-icon.png' %}" alt="My image" width="150" height="60">
-                    <div class="form-check">
-                        <input id="paytmId" class="form-check-input radio-check" type="radio" name="exampleRadios" value="option2">
-                    </div>
-                </li>
+            <span>Transaction ID：48002340</span><br>
+        </div>
+        <div class="row step1-box">
+            If you have paid, please upload a screenshot <br>
+            <div class="upload-box">
+                <div class="upload-btn-wrapper">
+                    <button class="btn">Upload</button>
+                    <input type="file" name="myfile" />
+                </div>
+            </div>
+        </div>
+        <div class="row agent-box">
+            FieWin recharge agents processing
+        </div>
+        <div class="row complete-box">
+            Complete
+        </div>
 
-                <li class="list-group-item"><img src="{% static 'myaccount/phonepe-logo-icon.png' %}" alt="My image" width="150" height="60">
-                    <div class="form-check">
-                        <input id="phonepeId" class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    </div>
-                </li>
-                <li class="list-group-item"><img src="{% static 'myaccount/google-pay-icon.png' %}" alt="My image" width="150" height="60">
-                    <div class="form-check">
-                        <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    </div>
-                </li>
-                <li class="list-group-item"><img src="{% static 'myaccount/amazon-pay-icon.png' %}" alt="My image" width="150" height="60">
-                    <div class="form-check">
-                        <input class="form-check-input radio-check" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="row paypop" id="paytmpop" style="display:none;">
-            <form method="post" action="{% url 'transaction' %}">{% csrf_token %}
-                <p>Pay to: SAMPLE.90060636964@fbpe</p>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">
-               Open <img src="{% static 'myaccount/paytm-icon.png' %}" alt="My image" width="50" height="50"> app to pay 50
-               
-            </button>
-            </form>
-        </div>
-        <div class="row paypop" id="phonepepop" style="display:none;">
-            <form method="post" action="{% url 'transaction' %}">{% csrf_token %}
-                <p>Pay to: SAMPLE.90060636964@fbpe</p>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Open <img src="{% static 'myaccount/phonepe-logo-icon.png' %}" alt="My image" width="50" height="50"> app to pay 50</button>
-            </form>
-        </div>
 
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#paytmId").click(function() {
-                document.getElementById('phonepepop').style.display = "none";
-                document.getElementById('paytmpop').style.display = "block";
-            });
-            $("#phonepeId").click(function() {
-                document.getElementById('paytmpop').style.display = "none";
-                document.getElementById('phonepepop').style.display = "block";
-            });
-        })
-    </script>
+
 </body>
 
 </html>

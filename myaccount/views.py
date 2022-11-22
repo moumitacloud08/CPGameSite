@@ -9,3 +9,6 @@ def myaccount(request):
 
 def recharge(request):
     return render(request, 'myaccount/payment.html' )
+
+def transaction(request):
+    return render(request, 'myaccount/transaction.html' )

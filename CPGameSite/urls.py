@@ -30,4 +30,5 @@ urlpatterns = [
     path('', gpanelview.loginpage, name='loginpage'),
     path('myaccount/', accountviews.myaccount, name='myaccount'),
     path('recharge/', accountviews.recharge, name='recharge'),
+    path('transaction/', accountviews.transaction, name='transaction'),
 ]
