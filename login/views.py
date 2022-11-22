@@ -13,6 +13,6 @@ def loginuser(request):
             return render(request, 'login/login.html', {'form':AuthenticationForm(), 'error':'Username and password did not match'})
       else:
             login(request, user)
-            return HttpResponseRedirect("/home/")
+            return HttpResponseRedirect("/game/")
     else:
       return render(request, 'login/login.html' )

@@ -260,6 +260,52 @@
             <div class="tab-pane active" id="bbb">
                 <!-- <div class="tab-pane-box"> -->
                 <div class="row">
+                    <div class="col-sm-6">Fast parity Record</div>
+                    <div class="col-sm-6"><a data-toggle="modal" data-target="#numberModal">more></a></div>
+                </div>
+                <div class="modal fade" id="numberModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Fast Parity Record</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Period</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Result</th>
+                                            <th scope="col">Open Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>345464</td>
+                                            <td>$4565</td>
+                                            <td><img class="img-box" src="{% static 'gpanel/cg2v1.png' %}" alt="My image" width="50" height="40"></td>
+                                            <td>11/22 19:26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>345464</td>
+                                            <td>$4565</td>
+                                            <td><img class="img-box" src="{% static 'gpanel/cg2v1.png' %}" alt="My image" width="50" height="40"></td>
+                                            <td>11/22 19:26</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
                     <div class=" record-img-box">
                         <span class="record-span-box">100</span>
