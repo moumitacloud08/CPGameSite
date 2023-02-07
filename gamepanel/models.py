@@ -19,6 +19,11 @@ class ColorMaster(models.Model):
     colorCode = models.CharField(default='', max_length=10)
     colorDesc = models.CharField(default='',max_length=10)
 
+class PeriodMaster(models.Model):
+    periodId = models.CharField(default='', max_length=10000)
+    periodDate = models.CharField(default='', max_length=10000)
+    periodCode = models.CharField(default='', max_length=10000)
+
 class RecordDetail(models.Model):
     recordId = models.CharField(default='', max_length=10)
     recordNumber = models.CharField(default='', max_length=10)
